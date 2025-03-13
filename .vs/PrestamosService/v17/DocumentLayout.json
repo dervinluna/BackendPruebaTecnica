@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\dervi\\Proyectos\\Prueba Tecnica\\PrestamosService\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A9778026-FBB0-4F3A-B0C0-0652E5AE9283}|PrestamosService.csproj|c:\\users\\dervi\\proyectos\\prueba tecnica\\prestamosservice\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A9778026-FBB0-4F3A-B0C0-0652E5AE9283}|PrestamosService.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A9778026-FBB0-4F3A-B0C0-0652E5AE9283}|PrestamosService.csproj|c:\\users\\dervi\\proyectos\\prueba tecnica\\prestamosservice\\controllers\\planpagoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A9778026-FBB0-4F3A-B0C0-0652E5AE9283}|PrestamosService.csproj|solutionrelative:controllers\\planpagoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -50,11 +54,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\dervi\\Proyectos\\Prueba Tecnica\\PrestamosService\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "C:\\Users\\dervi\\Proyectos\\Prueba Tecnica\\PrestamosService\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAAAkAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-03-13T05:34:32.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "IPrestamoRepository.cs",
               "DocumentMoniker": "C:\\Users\\dervi\\Proyectos\\Prueba Tecnica\\PrestamosService\\Repositories\\IPrestamoRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\IPrestamoRepository.cs",
@@ -62,12 +79,11 @@
               "RelativeToolTip": "Repositories\\IPrestamoRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T05:11:35.605Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T05:11:35.605Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\dervi\\Proyectos\\Prueba Tecnica\\PrestamosService\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -75,12 +91,11 @@
               "RelativeToolTip": "Properties\\launchSettings.json",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAABgAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-13T05:05:47.377Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T05:05:47.377Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\dervi\\Proyectos\\Prueba Tecnica\\PrestamosService\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -88,12 +103,11 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-13T05:05:11.266Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T05:05:11.266Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "IPlanPagosRepository.cs",
               "DocumentMoniker": "C:\\Users\\dervi\\Proyectos\\Prueba Tecnica\\PrestamosService\\Repositories\\IPlanPagosRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\IPlanPagosRepository.cs",
@@ -101,12 +115,11 @@
               "RelativeToolTip": "Repositories\\IPlanPagosRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T03:13:54.805Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T03:13:54.805Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PlanPagosController.cs",
               "DocumentMoniker": "C:\\Users\\dervi\\Proyectos\\Prueba Tecnica\\PrestamosService\\Controllers\\PlanPagosController.cs",
               "RelativeDocumentMoniker": "Controllers\\PlanPagosController.cs",
@@ -119,7 +132,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "PlanPagosRepository.cs",
               "DocumentMoniker": "C:\\Users\\dervi\\Proyectos\\Prueba Tecnica\\PrestamosService\\Repositories\\PlanPagosRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\PlanPagosRepository.cs",
@@ -127,12 +140,11 @@
               "RelativeToolTip": "Repositories\\PlanPagosRepository.cs",
               "ViewState": "AQIAADAAAAAAAAAAAAAgwEsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T03:05:20.716Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T03:05:20.716Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Prestamo.cs",
               "DocumentMoniker": "C:\\Users\\dervi\\Proyectos\\Prueba Tecnica\\PrestamosService\\Models\\Prestamo.cs",
               "RelativeDocumentMoniker": "Models\\Prestamo.cs",
@@ -140,12 +152,11 @@
               "RelativeToolTip": "Models\\Prestamo.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAABqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T02:44:45.266Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T02:44:45.266Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "PrestamoController.cs",
               "DocumentMoniker": "C:\\Users\\dervi\\Proyectos\\Prueba Tecnica\\PrestamosService\\Controllers\\PrestamoController.cs",
               "RelativeDocumentMoniker": "Controllers\\PrestamoController.cs",
@@ -153,12 +164,11 @@
               "RelativeToolTip": "Controllers\\PrestamoController.cs",
               "ViewState": "AQIAAFcAAAAAAAAAAAAmwF0AAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T02:40:00.342Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T02:40:00.342Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "PrestamoRepository.cs",
               "DocumentMoniker": "C:\\Users\\dervi\\Proyectos\\Prueba Tecnica\\PrestamosService\\Repositories\\PrestamoRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\PrestamoRepository.cs",
@@ -166,12 +176,11 @@
               "RelativeToolTip": "Repositories\\PrestamoRepository.cs",
               "ViewState": "AQIAAEEAAAAAAAAAAAAmwEkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T02:39:58.909Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T02:39:58.909Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "PlanPago.cs",
               "DocumentMoniker": "C:\\Users\\dervi\\Proyectos\\Prueba Tecnica\\PrestamosService\\Models\\PlanPago.cs",
               "RelativeDocumentMoniker": "Models\\PlanPago.cs",
@@ -179,8 +188,7 @@
               "RelativeToolTip": "Models\\PlanPago.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T02:48:27.634Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-13T02:48:27.634Z"
             }
           ]
         }
