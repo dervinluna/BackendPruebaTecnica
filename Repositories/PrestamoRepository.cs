@@ -57,39 +57,31 @@ namespace PrestamosService.Repositories
 
         public async Task UpdatePrestamoAsync(Prestamo prestamo)
         {
-            try
-            {
-                if (!await _context.Prestamos.AnyAsync(p => p.Id == prestamo.Id))
-                {
-                    throw new KeyNotFoundException($"No se encontró el préstamo con ID {prestamo.Id}.");
-                }
+            var existingPrestamo = await _context.Prestamos.FindAsync(prestamo.Id);
 
-                _context.Entry(prestamo).State = EntityState.Modified;
+            if (existingPrestamo != null)
+            {
+                _context.Entry(existingPrestamo).CurrentValues.SetValues(prestamo);
                 await _context.SaveChangesAsync();
             }
-            catch (Exception ex)
+            else
             {
-                throw new Exception($"Error al actualizar el préstamo: {ex.Message}");
+                throw new InvalidOperationException($"No se encontró un préstamo con ID {prestamo.Id}.");
             }
         }
+
 
         public async Task DeletePrestamoAsync(int id)
         {
-            try
+            var prestamo = await _context.Prestamos.FindAsync(id);
+            if (prestamo == null)
             {
-                var prestamo = await _context.Prestamos.FindAsync(id);
-                if (prestamo == null)
-                {
-                    throw new KeyNotFoundException($"No se encontró el préstamo con ID {id}.");
-                }
+                return; // Simplemente retorna si no existe, sin lanzar excepción.
+            }
 
-                _context.Prestamos.Remove(prestamo);
-                await _context.SaveChangesAsync();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Error al eliminar el préstamo: {ex.Message}");
-            }
+            _context.Prestamos.Remove(prestamo);
+            await _context.SaveChangesAsync();
         }
+
     }
 }

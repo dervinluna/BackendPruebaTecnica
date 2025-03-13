@@ -99,17 +99,18 @@ namespace PrestamosService.Controllers
                 var prestamo = await _repository.GetPrestamoAsync(id);
                 if (prestamo == null)
                 {
-                    return NotFound($"No se encontró el préstamo con ID {id}.");
+                    return NotFound(new { mensaje = $"No se encontró el préstamo con ID {id}." });
                 }
 
                 await _repository.DeletePrestamoAsync(id);
-                return Ok($"Préstamo con ID {id} eliminado exitosamente.");
+                return Ok(new { mensaje = $"Préstamo con ID {id} eliminado exitosamente." });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Error al eliminar préstamo: {ex.Message}");
+                return StatusCode(500, new { mensaje = $"Error al eliminar el préstamo: {ex.Message}" });
             }
         }
+
 
 
 
