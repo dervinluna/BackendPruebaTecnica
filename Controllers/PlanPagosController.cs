@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PrestamosService.Data;
 using PrestamosService.Repositories;
 
 namespace PrestamosService.Controllers
@@ -20,37 +19,65 @@ namespace PrestamosService.Controllers
         [HttpGet("{prestamoId}")]
         public async Task<ActionResult> ObtenerPlanDePago(int prestamoId)
         {
-            var planPagos = await _planPagosRepository.ObtenerPorPrestamoIdAsync(prestamoId);
-            if (planPagos == null || !planPagos.Any())
+            try
             {
-                return NotFound("No hay un plan de pagos asociado a este préstamo");
-            }
+                var planPagos = await _planPagosRepository.ObtenerPorPrestamoIdAsync(prestamoId);
+                if (planPagos == null || !planPagos.Any())
+                {
+                    return NotFound($"No hay un plan de pagos asociado al préstamo con ID {prestamoId}.");
+                }
 
-            return Ok(planPagos);
+                return Ok(planPagos);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error al obtener el plan de pagos: {ex.Message}");
+            }
         }
 
         [HttpPost("{prestamoId}/generar")]
         public async Task<ActionResult> GenerarPlanDePagos(int prestamoId)
         {
-            var prestamo = await _prestamoRepository.GetPrestamoAsync(prestamoId);
-            if (prestamo == null)
+            try
             {
-                return NotFound("Préstamo no encontrado");
+                var prestamo = await _prestamoRepository.GetPrestamoAsync(prestamoId);
+                if (prestamo == null)
+                {
+                    return NotFound($"Préstamo con ID {prestamoId} no encontrado.");
+                }
+
+                await _planPagosRepository.GenerarPlanDePagoAsync(prestamo);
+                return Ok($"Plan de pagos para el préstamo {prestamoId} generado exitosamente.");
             }
-            await _planPagosRepository.GenerarPlanDePagoAsync(prestamo);
-            return Ok("Plan de pagos generado exitosamente");
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(ex.Message); // Captura error si ya existe un plan de pagos.
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error al generar el plan de pagos: {ex.Message}");
+            }
         }
+
 
         [HttpDelete("{prestamoId}/eliminar")]
         public async Task<ActionResult> EliminarPlanDePago(int prestamoId)
         {
-            var prestamo = await _prestamoRepository.GetPrestamoAsync(prestamoId);
-            if (prestamo == null)
+            try
             {
-                return NotFound("Préstamo no encontrado");
+                var prestamo = await _prestamoRepository.GetPrestamoAsync(prestamoId);
+                if (prestamo == null)
+                {
+                    return NotFound($"Préstamo con ID {prestamoId} no encontrado.");
+                }
+
+                await _planPagosRepository.EliminarPlanDePagoAsync(prestamoId);
+                return Ok($"Plan de pagos para el préstamo {prestamoId} eliminado exitosamente.");
             }
-            await _planPagosRepository.EliminarPlanDePagoAsync(prestamoId);
-            return Ok("Plan de pagos eliminado exitosamente");
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error al eliminar el plan de pagos: {ex.Message}");
+            }
         }
 
 
