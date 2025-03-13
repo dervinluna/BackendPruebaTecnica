@@ -24,20 +24,22 @@ namespace PrestamosService.Repositories
         }
 
 
-        // Generar plan de pagos
-        public async Task GenerarPlanDePagoAsync(Prestamo prestamo)
+        // Generar plan de pagos y devolverlo
+        public async Task<IEnumerable<PlanPago>> GenerarPlanDePagoAsync(Prestamo prestamo)
         {
-            // Verificar si ya existe un plan de pagos para este préstamo
-            if (await _context.PlanesPago.AnyAsync(pp => pp.PrestamoId == prestamo.Id))
+            // 1️⃣ Verificar si ya existe un plan de pagos
+            var planPagosExistente = await ObtenerPorPrestamoIdAsync(prestamo.Id);
+            if (planPagosExistente.Any())
             {
-                throw new InvalidOperationException($"Ya existe un plan de pagos para el préstamo con ID {prestamo.Id}.");
+                return planPagosExistente; // ✅ Devolver el plan ya existente
             }
 
+            // 2️⃣ Si no existe, generarlo
             decimal montoTotal = prestamo.Monto * 1.519m; // Aplicamos el interés
             decimal cuotaMensual = Math.Round(montoTotal / prestamo.Cuotas, 0);
 
             var planPagos = new List<PlanPago>();
-            for (int i = 1; i <= prestamo.Cuotas; i++) // Cuotas deben empezar en 1
+            for (int i = 1; i <= prestamo.Cuotas; i++)
             {
                 planPagos.Add(new PlanPago
                 {
@@ -50,6 +52,8 @@ namespace PrestamosService.Repositories
 
             _context.PlanesPago.AddRange(planPagos);
             await _context.SaveChangesAsync();
+
+            return planPagos; // ✅ Devolver el nuevo plan generado
         }
 
 
@@ -63,12 +67,13 @@ namespace PrestamosService.Repositories
 
             if (!pagos.Any())
             {
-                throw new InvalidOperationException($"No existe un plan de pagos para el préstamo con ID {prestamoId}.");
+                return; // ❌ Si no hay planes de pago, simplemente salir sin error
             }
 
             _context.PlanesPago.RemoveRange(pagos);
             await _context.SaveChangesAsync();
         }
+
 
 
     }

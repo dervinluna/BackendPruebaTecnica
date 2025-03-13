@@ -46,12 +46,8 @@ namespace PrestamosService.Controllers
                     return NotFound($"Préstamo con ID {prestamoId} no encontrado.");
                 }
 
-                await _planPagosRepository.GenerarPlanDePagoAsync(prestamo);
-                return Ok($"Plan de pagos para el préstamo {prestamoId} generado exitosamente.");
-            }
-            catch (InvalidOperationException ex)
-            {
-                return BadRequest(ex.Message); // Captura error si ya existe un plan de pagos.
+                var planPagos = await _planPagosRepository.GenerarPlanDePagoAsync(prestamo);
+                return Ok(planPagos); // ✅ Devolvemos el plan generado o existente
             }
             catch (Exception ex)
             {
@@ -61,24 +57,25 @@ namespace PrestamosService.Controllers
 
 
         [HttpDelete("{prestamoId}/eliminar")]
-        public async Task<ActionResult> EliminarPlanDePago(int prestamoId)
+        public async Task<IActionResult> EliminarPlanDePago(int prestamoId)
         {
             try
             {
                 var prestamo = await _prestamoRepository.GetPrestamoAsync(prestamoId);
                 if (prestamo == null)
                 {
-                    return NotFound($"Préstamo con ID {prestamoId} no encontrado.");
+                    return NotFound(new { mensaje = $"No se encontró el préstamo con ID {prestamoId}." });
                 }
 
                 await _planPagosRepository.EliminarPlanDePagoAsync(prestamoId);
-                return Ok($"Plan de pagos para el préstamo {prestamoId} eliminado exitosamente.");
+                return Ok(new { mensaje = $"Plan de pagos para el préstamo {prestamoId} eliminado exitosamente." });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Error al eliminar el plan de pagos: {ex.Message}");
+                return StatusCode(500, new { mensaje = $"Error al eliminar el plan de pagos: {ex.Message}" });
             }
         }
+
 
 
     }
